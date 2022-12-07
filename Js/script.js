@@ -39,7 +39,7 @@ function generateGameGrid(cellsNumber, cellsPerRow){
     grid.style.width = `${grid_side}px`
     grid.style.height = `${grid_side}px`
     
-    document.querySelector('.container-griglia').inneHTML = '';
+    document.querySelector('.container-griglia').innerHTML = '';
     console.log(document.querySelector('.container-griglia').inneHTML);
     
     for (let i=0; i <cellsNumber; i++){
