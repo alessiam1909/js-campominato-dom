@@ -76,7 +76,7 @@ function generateGameGrid(bombe, cellsNumber, cellsPerRow){
                 let valore = this.innerText;
                 setTimeout(function() {
                     grid.classList.add('pointer');
-                    alert("Hai detonato la bomba numero: "+valore+".   "+"\nHai schiacciato "+document.getElementsByClassName('clicked').length+" casella/e prima di perdere."+"\nPremi 'Play' per giocare ancora!");
+                    document.getElementById('punteggio').innerHTML =`${"Hai detonato la bomba numero: "}${valore}${".   "}${"<br>Hai schiacciato "}${document.getElementsByClassName('clicked').length}${" casella/e prima di perdere."}${"<br>Premi 'Play' per giocare ancora!"}`;
                 },10)
             }else{
                 this.classList.add('clicked');

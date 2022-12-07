@@ -41,9 +41,11 @@ main{
     width: 100vw;
     height: 85vh;
     background-color: aquamarine;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+   
 }
 
 .container-griglia{
@@ -80,6 +82,13 @@ main{
 
 .pointer{
     pointer-events: none;
+}
+
+#punteggio{
+    font-size: 20px;
+    font-weight: 800;
+    color: rgb(148, 11, 11);
+    margin-right: 100px;
 }
 
 footer{
