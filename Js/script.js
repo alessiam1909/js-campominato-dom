@@ -70,8 +70,13 @@ function generateGameGrid(bombe, cellsNumber, cellsPerRow){
         const cell = createSingleCell(i, cellsPerRow);
         cell.addEventListener('click', function(){
             console.log(this.innerText)
+            //  Faccio in modo che la cella contenente una bomba si colori di rosso e fermi il gioco ( l'utente non può cliccare sulle altre caselle dopo aver detonato la bomba)
             if(bombe.includes(parseInt(this.innerText))){
                 this.classList.add('red');
+                this.addEventListener('mousemove', function(){
+                    grid.classList.add('pointer');
+                    alert("Hai detonato la bomba numero: "+this.innerText+".   "+"Premi Play per giocare ancora!");
+                })
             }else{
                 this.classList.add('clicked');
             }

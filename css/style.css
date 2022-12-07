@@ -78,6 +78,10 @@ main{
     background-color: rgb(160, 9, 9);
 }
 
+.pointer{
+    pointer-events: none;
+}
+
 footer{
     width: 100vw;
     height: 5vh;
