@@ -17,3 +17,5 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 
 RISOLUZIONE 2:
 1 - Creo una funzione che generi un array contenente 16 numeri casuali (che saranno le bombe), che però non devono ripetersi.
+
+2 - Faccio in modo che la cella contenente una bomba si colori di rosso 

@@ -50,10 +50,10 @@ function createNewGame(){
     arrayBombe = creaArrayBombe(1 , cellsNumber);
     console.log(arrayBombe);
 
-    generateGameGrid(cellsNumber, cellsPerRow);
+    generateGameGrid(arrayBombe, cellsNumber, cellsPerRow);
 }
 
-function generateGameGrid(cellsNumber, cellsPerRow){
+function generateGameGrid(bombe, cellsNumber, cellsPerRow){
     
     const grid = document.createElement('div');
     grid.classList.add('griglia');
@@ -69,8 +69,12 @@ function generateGameGrid(cellsNumber, cellsPerRow){
     for (let i=0; i <cellsNumber; i++){
         const cell = createSingleCell(i, cellsPerRow);
         cell.addEventListener('click', function(){
-            this.classList.toggle('clicked')
             console.log(this.innerText)
+            if(bombe.includes(parseInt(this.innerText))){
+                this.classList.add('red');
+            }else{
+                this.classList.add('clicked');
+            }
         })
 
         grid.appendChild(cell)
@@ -79,7 +83,7 @@ function generateGameGrid(cellsNumber, cellsPerRow){
     document.querySelector('.container-griglia').appendChild(grid)
 }
 
-function createSingleCell(num, cells_per_row){
+function createSingleCell(num){
     const cell = document.createElement('div');
     cell.classList.add('quadrato');
 
