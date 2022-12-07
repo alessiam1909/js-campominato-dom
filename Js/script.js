@@ -74,10 +74,10 @@ function generateGameGrid(bombe, cellsNumber, cellsPerRow){
             if(bombe.includes(parseInt(this.innerText))){
                 this.classList.add('red');
                 let valore = this.innerText;
-                setTimeout(function() {
-                    grid.classList.add('pointer');
-                    document.getElementById('punteggio').innerHTML =`${"Hai detonato la bomba numero: "}${valore}${".   "}${"<br>Hai schiacciato "}${document.getElementsByClassName('clicked').length}${" casella/e prima di perdere."}${"<br>Premi 'Play' per giocare ancora!"}`;
-                },10)
+                
+                grid.classList.add('pointer');
+                document.getElementById('punteggio').innerHTML =`${"Hai detonato la bomba numero: "}${valore}${".   "}${"<br>Hai schiacciato "}${document.getElementsByClassName('clicked').length}${" casella/e prima di perdere."}${"<br>Premi 'Play' per giocare ancora!"}`;
+                
             }else{
                 this.classList.add('clicked');
                 if(document.getElementsByClassName('clicked').length == (cellsNumber - 16)){
