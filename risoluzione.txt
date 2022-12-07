@@ -19,3 +19,5 @@ RISOLUZIONE 2:
 1 - Creo una funzione che generi un array contenente 16 numeri casuali (che saranno le bombe), che però non devono ripetersi.
 
 2 - Faccio in modo che la cella contenente una bomba si colori di rosso 
+
+3 - dopo aver detonato la bomba l'utente non può  più interagire con le altre celle

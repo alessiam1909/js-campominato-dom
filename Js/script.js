@@ -73,12 +73,18 @@ function generateGameGrid(bombe, cellsNumber, cellsPerRow){
             //  Faccio in modo che la cella contenente una bomba si colori di rosso e fermi il gioco ( l'utente non può cliccare sulle altre caselle dopo aver detonato la bomba)
             if(bombe.includes(parseInt(this.innerText))){
                 this.classList.add('red');
-                this.addEventListener('mousemove', function(){
+                let valore = this.innerText;
+                setTimeout(function() {
                     grid.classList.add('pointer');
-                    alert("Hai detonato la bomba numero: "+this.innerText+".   "+"Premi Play per giocare ancora!");
-                })
+                    alert("Hai detonato la bomba numero: "+valore+".   "+"\nHai schiacciato "+document.getElementsByClassName('clicked').length+" casella/e prima di perdere."+"\nPremi 'Play' per giocare ancora!");
+                },10)
             }else{
                 this.classList.add('clicked');
+                if(document.getElementsByClassName('clicked').length == (cellsNumber - 16)){
+                    setTimeout(function() {
+                        alert("Hai vinto!");
+                    },10)
+                }
             }
         })
 
