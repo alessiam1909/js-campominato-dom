@@ -81,6 +81,7 @@ function generateGameGrid(bombe, cellsNumber, cellsPerRow){
             }else{
                 this.classList.add('clicked');
                 if(document.getElementsByClassName('clicked').length == (cellsNumber - 16)){
+                    document.getElementById('punteggio').innerHTML = `${"Hai vinto!!!"}`
                     setTimeout(function() {
                         alert("Hai vinto!");
                     },10)
