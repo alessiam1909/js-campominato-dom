@@ -1,8 +1,29 @@
 const bottone = document.getElementById('bottone-play');
 
+// 1 - Creo una funzione che generi un array contenente 16 numeri casuali (che saranno le bombe), che però non devono ripetersi.
+function creaArrayBombe( min, max){
+
+    let bombe = [];
+    let i = 0;
+
+    while(i < 16){
+        
+        let number = Math.floor(Math.random() * (max - min + 1)) + min;
+        if(!bombe.includes(number)){
+            bombe.push(number);
+            i++;
+        }
+    }
+
+    return bombe;
+}
+
 function createNewGame(){
     let difficulty = parseInt(document.getElementById('level').value) ;
     console.log(difficulty);
+
+    let arrayBombe =[];
+    
 
     let cellsNumber;
     let cellsPerRow;
@@ -26,6 +47,9 @@ function createNewGame(){
             break;  
     }
 
+    arrayBombe = creaArrayBombe(1 , cellsNumber);
+    console.log(arrayBombe);
+
     generateGameGrid(cellsNumber, cellsPerRow);
 }
 
@@ -40,7 +64,7 @@ function generateGameGrid(cellsNumber, cellsPerRow){
     grid.style.height = `${grid_side}px`
     
     document.querySelector('.container-griglia').innerHTML = '';
-    console.log(document.querySelector('.container-griglia').inneHTML);
+    
     
     for (let i=0; i <cellsNumber; i++){
         const cell = createSingleCell(i, cellsPerRow);
